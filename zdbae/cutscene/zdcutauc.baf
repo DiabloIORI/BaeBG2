@@ -4,8 +4,8 @@ THEN
   RESPONSE #100
     CutSceneID(Player1)
     ClearAllActions()
-    DisplayStringHead("Announcer","For those who value not only elegance but also refinement and sophistication, I present to you these magnificent boots.") /* ~~ */
+    DisplayStringHead("Announcer","诸位若看重的不仅是优雅，还有精致与品味，我便将这双华美靴子呈现于你们眼前。") /* ~~ */
     EndCutSceneMode()
-    AddJournalEntry("You went to an auction with baeloth, who knew shopping could be so fun!",INFO) /* ~~ */
+    AddJournalEntry("你与贝洛斯去了一场拍卖会——谁能想到买东西竟能这么有趣！",INFO) /* ~~ */
     ActionOverride("ZDBAE",StartDialogueNoSet([PC]))
 END

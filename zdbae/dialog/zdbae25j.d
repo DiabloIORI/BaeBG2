@@ -4,19 +4,19 @@ BEGIN ZDBAE25J
 
 /* saradush, volo */
 EXTEND_TOP SARVOLO 9 #3
-+ ~InParty("ZDBAE") InMyArea("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID)~ + ~Tell me about Baeloth.~ + ZDBaeVoloBio
++ ~InParty("ZDBAE") InMyArea("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID)~ + ~跟我说说贝洛斯。~ + ZDBaeVoloBio
 END
 
 CHAIN SARVOLO ZDBaeVoloBio
-~ Baeloth Barrityl, self-styled 'the Entertainer', a drow sorcerer of great power and greater ego. Infamous in the Underdark for his Black Pits, an arena where he-~
-== ZDBAE25J ~Silence, you blundering buffoon! I'm writing my own scintillating story, sure to outsell every tale in your repertoire. I will not be reduced to a footnote.~
-== SARVOLO ~Then perhaps I should omit you entirely?~
-== ZDBAE25J ~Nonsense! Slide over your scroll, and I shall scribe something worthy of me.~
-== ZDBAE25J ~Of course, I expect royalties for the privilege of adding my prose.~
-== SARVOLO ~...And I expect my revisions shall be extensive.~
+~ 贝洛斯·巴瑞提尔，自封“艺人”，一位力量非凡、自负更甚的卓尔术士。他在幽暗地域因“死斗黑坑”而臭名远扬——那是一座竞技场，他在那里……~
+== ZDBAE25J ~闭嘴，你这满嘴胡吣的蠢材！我正在写我自己那部精彩绝伦的故事，必定比你全部话本加起来都卖得好。别想把我缩成一条脚注。~
+== SARVOLO ~那么，我干脆把你整个删去？~
+== ZDBAE25J ~胡说！把你的卷轴滑过来，我要亲手写下配得上我的文字。~
+== ZDBAE25J ~当然，我添上自己这篇妙文的版税，我是要收的。~
+== SARVOLO ~……而我料想，我的删改也会相当之多。~
 EXTERN SARVOLO 9
 
 /* solar, tob finale */
 I_C_T FINSOL01 27 ZDBaeSolar
-== ZDBAE25J IF ~InParty("ZDBAE") InMyArea("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID)~ THEN ~Foolish to forsake my company, of course. Still, should you choose to ascend, I shall await the boons you so greatly owe me.~
+== ZDBAE25J IF ~InParty("ZDBAE") InMyArea("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID)~ THEN ~舍弃我的陪伴当然是愚蠢的。不过，你若执意升神，我会等着收你欠我的那些赏赐——你欠得可不少。~
 END

@@ -2,88 +2,88 @@ BEGIN ZDBAE
 
 // Joining dialogue
 IF ~!Global("ZDBAE_HOSTILE","GLOBAL",1) Global("ZDBAE_BEGIN","GLOBAL",0) Global("ZDBAE_SHUTUP","GLOBAL",0)~ THEN BEGIN ZDBAE1
-  SAY ~Well, well, well, what whimsical wonder do we witness here? Another face amidst the multitude of mundane mediocrity. You stand before the ineffable Baeloth the Entertainer.~
-  IF ~~ THEN REPLY ~Well met, I am <CHARNAME>.~ DO ~SetGlobal("ZDBAE_BEGIN","GLOBAL",1)~ GOTO ZDBAE2
-  IF ~Global("BA_BEGIN","GLOBAL",1)~ THEN REPLY ~Baeloth, we travelled together before. Surely you remember me?~ DO ~SetGlobal("ZDBAE_BEGIN","GLOBAL",1)~ GOTO ZDBAE3
-  IF ~Global("BA_BEGIN","GLOBAL",1)~ THEN REPLY ~If it isn't my least favorite megalomaniac. Don't you remember me, drow?~ DO ~SetGlobal("ZDBAE_BEGIN","GLOBAL",1)~ GOTO ZDBAE3
-  IF ~~ THEN REPLY ~Whatever mischief you're planning, I'll play no part in it.~ DO ~SetGlobal("ZDBAE_BEGIN","GLOBAL",1) SetGlobal("ZDBAE_SHUTUP","GLOBAL",1)~ GOTO ZDBAEFU
+  SAY ~好呀，好呀，好呀，我们眼前这又是什么稀奇古怪的奇景？又一张淹没在芸芸平庸之辈里的面孔。你正站在难以言喻的艺人贝洛斯面前。~
+  IF ~~ THEN REPLY ~幸会，我是<CHARNAME>。~ DO ~SetGlobal("ZDBAE_BEGIN","GLOBAL",1)~ GOTO ZDBAE2
+  IF ~Global("BA_BEGIN","GLOBAL",1)~ THEN REPLY ~贝洛斯，我们以前一起旅行过。你总该记得我吧？~ DO ~SetGlobal("ZDBAE_BEGIN","GLOBAL",1)~ GOTO ZDBAE3
+  IF ~Global("BA_BEGIN","GLOBAL",1)~ THEN REPLY ~这不是我最不待见的自大狂吗。你不记得我了，卓尔？~ DO ~SetGlobal("ZDBAE_BEGIN","GLOBAL",1)~ GOTO ZDBAE3
+  IF ~~ THEN REPLY ~不管你在打什么鬼主意，我都不掺和。~ DO ~SetGlobal("ZDBAE_BEGIN","GLOBAL",1) SetGlobal("ZDBAE_SHUTUP","GLOBAL",1)~ GOTO ZDBAEFU
 END
 
 IF ~!Global("ZDBAE_HOSTILE","GLOBAL",1) Global("ZDBAE_BEGIN","GLOBAL",1) Global("ZDBAE_SHUTUP","GLOBAL",1)~ THEN BEGIN ZDBAES
-  SAY @6 // ~Eh? What do YOU want?~ [zdbaef]
-  IF ~~ THEN REPLY ~I could use your skills. Perhaps you'd consider joining me?~ GOTO ZDBAE5
-  IF ~~ THEN REPLY ~I want you to die, drow!~ DO ~SetGlobal("ZDBAE_REVEAL","GLOBAL",1)~ GOTO ZDBAE100
-  IF ~~ THEN REPLY ~I am not interested in your dog and pony show.~ GOTO ZDBAEC
+  SAY @6 // ~呃？你 想 要 什 么？~ [zdbaef]
+  IF ~~ THEN REPLY ~我用得上你的本事。也许你愿意加入我？~ GOTO ZDBAE5
+  IF ~~ THEN REPLY ~我要你死，卓尔！~ DO ~SetGlobal("ZDBAE_REVEAL","GLOBAL",1)~ GOTO ZDBAE100
+  IF ~~ THEN REPLY ~我对你那套耍猴戏不感兴趣。~ GOTO ZDBAEC
 END
 
 // Confused
 IF ~~ BEGIN ZDBAEC
-  SAY ~But, but - my equine-and-lupus burlesque pageant draws distinguished drow from all over! In any event, should you tire of these tedious refusals, I shall remain here.~
+  SAY ~可是，可是——我那马与狼的滑稽歌舞大戏吸引着各地卓尔名流！总之，等你厌倦了这些乏味的拒绝，我还留在这儿。~
   IF ~~ THEN EXIT
 END
 
 // Hello
 IF ~~ THEN BEGIN ZDBAE2
-  SAY ~<CHARNAME>, tell me, is this what passes for perverse entertainment? Pitiful! Poorly played! Pathetic! What a paltry pit fight.~
-  IF ~~ THEN REPLY ~If you want real entertainment, perhaps you'll consider joining me?~ GOTO ZDBAE5
-  IF ~~ THEN REPLY ~I've no patience for this prattle.~ DO ~SetGlobal("ZDBAE_SHUTUP","GLOBAL",1)~ GOTO ZDBAEFU
+  SAY ~<CHARNAME>，告诉我，这就是你们所谓的变态娱乐？可怜！演得真烂！可悲！多么微不足道的一场坑斗。~
+  IF ~~ THEN REPLY ~你若想要真正的娱乐，也许可以考虑加入我？~ GOTO ZDBAE5
+  IF ~~ THEN REPLY ~我可没耐心听这些废话。~ DO ~SetGlobal("ZDBAE_SHUTUP","GLOBAL",1)~ GOTO ZDBAEFU
 END
 
 IF ~~ THEN BEGIN ZDBAEFU
-  SAY ~Your loss, I assure you!~
+  SAY ~我保证，那是你的损失！~
   IF ~~ THEN EXIT
 END
 
 // Remember
 IF ~~ THEN BEGIN ZDBAE3
-  SAY~Ah, absolutely! How could one forget a countenance as... delicately distinctive as yours? Regardless, rest assured that I would never disregard the delightful pleasure of your company, revelling in the glory that is, well... me.~
-  IF ~Global("BPINBG","GLOBAL",1)~ THEN REPLY ~You ought to remember. After all, I am your former champion.~ GOTO ZDBAE4
-  IF ~~ THEN REPLY ~You don't remember me at all, do you?~ GOTO ZDBAE4
+  SAY ~啊，当然！谁能忘记一张如你这般……精巧独特的面孔？总之请放心，我绝不会错过有你相伴的愉快乐趣，沉醉在那份荣耀之中，也就是……我。~
+  IF ~Global("BPINBG","GLOBAL",1)~ THEN REPLY ~你该记得的。毕竟，我曾是你的冠军。~ GOTO ZDBAE4
+  IF ~~ THEN REPLY ~你压根不记得我了，是吧？~ GOTO ZDBAE4
 END
 
 IF ~~ THEN BEGIN ZDBAE4
-  SAY ~My mirthful mate, let's not meander over minor matters. I am a dashing drow of discernment and delicious taste indeed!~
-  IF ~~ THEN REPLY ~I suppose your skills may be useful. Perhaps you'll consider joining me?~ GOTO ZDBAE5
-  IF ~~ THEN REPLY ~I don't need your company, Baeloth.~ GOTO ZDBAEFU
+  SAY ~我欢乐的伙伴，别在细枝末节上绕圈子。我可是位有见识、品味绝妙的潇洒卓尔！~
+  IF ~~ THEN REPLY ~我看你的本事或许有用。也许你会考虑加入我？~ GOTO ZDBAE5
+  IF ~~ THEN REPLY ~我不需要你作伴，贝洛斯。~ GOTO ZDBAEFU
 END
 
 // Reject
 IF ~~ THEN BEGIN ZDBAE5
-  SAY ~No, no, no. I crave for splendor and spectacle. Not cavorting amongst the common rabble with...What did you say your name was again? Instead, you shall bear witness as this arena falls under my dazzling dominion!~
+  SAY ~不，不，不。我渴望的是辉煌与场面，不是跟……你刚说你叫什么来着？跟那帮寻常乌合之众厮混。你该做的，是亲眼看着这座竞技场落入我耀眼无匹的统治之下！~
   IF ~~ THEN GOTO ZDBAE7
 END
 
 // Reveal
 IF ~~ THEN BEGIN ZDBAE7
-  SAY ~Behold! Your ENTERTAINER!~
+  SAY ~看哪！你们的 艺 人 ！~
   IF ~~ THEN DO ~SetGlobal("ZDBAE_BEGIN","GLOBAL",2) SetGlobal("ZDBAE_REVEAL","GLOBAL",1)~ EXIT
 END
 
 // Rescue
 IF ~!Global("ZDBAE_HOSTILE","GLOBAL",1) Global("ZDBAE_REVEAL","GLOBAL",2)~ THEN BEGIN ZDBAE8
-  SAY ~Upon further reflection, I reconsider. I shall join your party of plenty after all. These misguided masses seem rather misinformed, don't you think? Let us be off, before Baeloth the Brilliant becomes Baeloth the Bludgeoned.~
-  IF ~~ THEN REPLY ~I accept this loose premise; let's hope your bark is as big as your bite.~ GOTO ZDBAE11
-  IF ~~ THEN REPLY ~I think I'd be better entertained by watching what these people do to you.~ GOTO ZDBAE100
-  IF ~Global("BPINBG","GLOBAL",1)~ THEN REPLY ~My trust in you is thin, but I'll suffer your company for your spells.~ GOTO ZDBAE11
-  IF ~Global("BA_ATTACKED","LOCALS",1)~ THEN REPLY ~Our last travels together ended badly for you.~ GOTO ZDBAE10
+  SAY ~再想一想，我改主意了。我终究还是要加入你这人多势众的队伍。这些误入歧途的群众似乎相当不明真相，你不觉得吗？我们快走吧，免得“辉煌的贝洛斯”落成“挨揍的贝洛斯”。~
+  IF ~~ THEN REPLY ~我接受这个松散的前提；但愿你的牙口跟你的大话一样厉害。~ GOTO ZDBAE11
+  IF ~~ THEN REPLY ~我想看这些人怎么收拾你，会让我更开心。~ GOTO ZDBAE100
+  IF ~Global("BPINBG","GLOBAL",1)~ THEN REPLY ~我对你信任很薄，但为了你的法术，我忍你同行。~ GOTO ZDBAE11
+  IF ~Global("BA_ATTACKED","LOCALS",1)~ THEN REPLY ~我们上回一起旅行，对你来说结局可不好。~ GOTO ZDBAE10
 END
 
 // Uncertain
 IF ~~ THEN BEGIN ZDBAE10
-  SAY~Let bygones be bygones, as they say, hmm?~
-  IF ~~ THEN REPLY ~My trust in you is thin, but I'll suffer your company for your spells.~ GOTO ZDBAE11
-  IF ~~ THEN REPLY ~I think I'd be better entertained by watching what these people do to you.~ GOTO ZDBAE100
-  IF ~Global("BPINBG","GLOBAL",1)~ THEN REPLY ~You once trapped me in your pits, Baeloth. Let's see how you fare in this one.~ GOTO ZDBAE100
+  SAY ~过去的事就让它过去吧，俗话说得好，嗯？~
+  IF ~~ THEN REPLY ~我对你信任很薄，但为了你的法术，我忍你同行。~ GOTO ZDBAE11
+  IF ~~ THEN REPLY ~我想看这些人怎么收拾你，会让我更开心。~ GOTO ZDBAE100
+  IF ~Global("BPINBG","GLOBAL",1)~ THEN REPLY ~你曾把我困在你的坑里，贝洛斯。看看你在这座坑里表现如何。~ GOTO ZDBAE100
 END
 
 // Joins
 IF ~~ THEN BEGIN ZDBAE11
-  SAY ~Then step spryly, my serendipitous sidekick! We've a spectacular show to stage: the masses will marvel at the magic of Baeloth!~
+  SAY ~那就轻快些跟上，我这位撞上好运的搭档！我们有一场盛大的演出要上演：众人将为贝洛斯的魔法惊叹！~
   IF ~~ THEN DO ~SetGlobal("ZDBAE_JOINED","GLOBAL",1)~ EXIT
 END
 
 IF ~~ THEN BEGIN ZDBAE100
-  SAY @50 // ~Oh, COME ON!~ [zdbae54]
+  SAY @50 // ~哦， 拜 托 ！~ [zdbae54]
   IF ~~ THEN DO ~
     SetGlobal("ZDBAE_HOSTILE","GLOBAL",1)
     ActionOverride("ZDBAE",ChangeAIScript("mage18c",CLASS))
@@ -94,5 +94,5 @@ END
 // Response: If I may have your attention once again, gentlefolk of Athkatla! Lehtinan is proud to provide for your amusement once again! Bring your attention to the pit as we see two combatants fighting for their very lives!
 INTERJECT ANNO1 0 ZDBAEINTRO0
   == ZDBAE IF ~~ THEN
-  ~Oohoohoohoo! This should be good!~
+  ~喔嚯嚯嚯嚯！这下有看头了！~
 END ANNO1 1

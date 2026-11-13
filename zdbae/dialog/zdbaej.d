@@ -2,37 +2,37 @@ BEGIN ZDBAEJ
 
 // Real HouseWives of Athkatla
 IF ~Global("ZDBaeBoots","GLOBAL",1)~ THEN ZDBAETOSSACOINTOYOURBAELOTH
-  SAY ~AHH, the bustle of the bazaar! Trinkets, treasures, and tantalizing trinkets aplenty. My boots, alas, are worn thin from all our wandering. Perhaps you should spend a coin or two and preserve your most precious pal?~
-  ++ ~All of that petty postering just to tell me your boots are falling apart!~ + ZDBAEBOOTS1
-  ++ ~Then I suppose we could buy you a new pair.~ + ZDBAEBOOTS1
-  ++ ~You're here to sling spells, Baeloth, not bore me with your endless chatter.~ DO ~SetGlobal("ZDBAEBoots","GLOBAL",2)~ EXIT
+  SAY ~啊啊，这集市的热闹！小玩意儿、宝贝，还有一大堆勾人的小玩意儿。可惜我的靴子跟着咱们四处游荡，都磨薄了。也许你该花上一两枚金币，好好养护你最珍贵的好伙计？~
+  ++ ~你这么大费周章地摆姿态，就为了告诉我你的靴子要散架了！~ + ZDBAEBOOTS1
+  ++ ~那我看看给你买双新的吧。~ + ZDBAEBOOTS1
+  ++ ~你是来施法的，贝洛斯，不是拿没完没了的废话烦我。~ DO ~SetGlobal("ZDBAEBoots","GLOBAL",2)~ EXIT
 END
 
 IF ~Global("ZDBAEBoots","GLOBAL",2)~ ZDBAEBOOTS1
-  SAY ~Precisely! What greater tragedy is there than Baeloth Barrityl being undone by shabby soles?~
+  SAY ~正是如此！还有什么比贝洛斯·巴瑞提尔败在一双破鞋底上更惨的悲剧？~
   IF ~~ DO ~AddJournalEntry(@1000001, QUEST) SetGlobal("ZDBAEBoots","GLOBAL",3)~ EXIT
 END
 
 IF ~Global("ZDAuctionTrigger", "GLOBAL", 6)~ ZDBAETRHWOABET
-  SAY ~Really?! Just what number is navigating through your noble nogin?~
-  IF ~PartyGoldGT(10000)~ REPLY ~Ten thousand, gold pieces.~ DO ~SetGlobal("ZDAuctionTrigger","GLOBAL",7)~ GOTO ZDBAEBIGMONEY10
-  IF ~PartyGoldGT(5000)~ REPLY ~Five thousand, gold pieces.~ DO ~SetGlobal("ZDAuctionTrigger","GLOBAL",7)~ GOTO ZDBAEBIGMONEY5
-  IF ~PartyGoldGT(2500)~ REPLY ~Two thousand, Five hundred, gold pieces.~ DO ~SetGlobal("ZDAuctionTrigger","GLOBAL",7)~ GOTO ZDBAEBIGMONEY2.5
-  IF ~~ REPLY ~Nevermind forget I said anything.~ EXIT
+  SAY ~当真？！你那高贵的脑袋里转的是什么数字？~
+  IF ~PartyGoldGT(10000)~ REPLY ~一万金币。~ DO ~SetGlobal("ZDAuctionTrigger","GLOBAL",7)~ GOTO ZDBAEBIGMONEY10
+  IF ~PartyGoldGT(5000)~ REPLY ~五千金币。~ DO ~SetGlobal("ZDAuctionTrigger","GLOBAL",7)~ GOTO ZDBAEBIGMONEY5
+  IF ~PartyGoldGT(2500)~ REPLY ~两千五百金币。~ DO ~SetGlobal("ZDAuctionTrigger","GLOBAL",7)~ GOTO ZDBAEBIGMONEY2.5
+  IF ~~ REPLY ~算了，当我什么都没说。~ EXIT
 END
 
 IF ~Global("ZDAuctionTrigger","GLOBAL",7)~ ZDBAEBIGMONEY10
-  SAY ~Oooh, LET ME ENTERTAIN YOU. Sir I bid, Ten thousand, gold pieces.~
+  SAY ~哦哦，让我来取悦你. 先生，我出价——一万金币。~
   IF ~~ EXTERN ZDAUCTIO ZDDAUCTIGOT10
 END
 
 IF ~Global("ZDAuctionTrigger","GLOBAL",7)~ ZDBAEBIGMONEY5
-  SAY ~Excellent, let's elucidate the elite! Five thousand, gold pieces!~
+  SAY ~好极了，让精英们看清点！五千金币！~
   IF ~~ EXTERN ZDAUCTIO ZDDAUCTIGOT5
 END
 
 IF ~Global("ZDAuctionTrigger","GLOBAL",7)~ ZDBAEBIGMONEY2.5
-  SAY ~Ahhh what a titillating tithe! I bid, Two thousand, Five hundred, gold pieces.~
+  SAY ~啊啊，多么撩人的一笔献金！我出价——两千五百金币。~
   IF ~~ EXTERN ZDAUCTIO ZDDAUCTIGOT5
 END
 
@@ -43,18 +43,18 @@ IF ~InParty("ZDBAE")
     !StateCheck("ZDBAE",CD_STATE_NOTVALID)
     Global("ZDBAECelvan","AR0300",0)~
 THEN CELVAN ZDBAECELV
-~The Black Pits he ran with great flair,
-A sorcerer beyond compare.
-But hear him ramble on,
-From dusk well past dawn,
-And you'll wish he'd run out of air.~
+~他操办黑坑，风光得没边，
+术士之里，无人可与他并肩。
+可只要他开了口，
+从黄昏唠到天明，
+你只盼他早早断了那口气。~
 DO ~SetGlobal("ZDBAECelvan","AR0300",1)~
-== ZDBAEJ ~Oho! Two can play this game!~
-== ZDBAEJ ~Confident in his gab,
-A gnome tries to deliver a jab.
-But one jest too far,
-And I'll make you the star,
-Of *my* show. Now run or I'll stab...~
+== ZDBAEJ ~喔嚯！这游戏两个人也能玩！~
+== ZDBAEJ ~区区侏儒口舌伶俐，
+想拿我寻个开心。
+只要一句玩笑越过界，
+我就让你在我的舞台上当主角。
+现在滚，不然我就捅下去……~
 END CELVAN 1
 
 
@@ -62,51 +62,51 @@ END CELVAN 1
 // Government District
 // Viconia intro
 I_C_T VICG1 1 ZDBAEMOB1
-== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~Let's make ourselves scarce, shall we? Before their righteous rage redirects towards us.~
+== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~咱们还是先躲开吧，好不好？免得他们那股正气凛然的怒火转过来冲我们。~
 END
 
 I_C_T VICG1 2 ZDBAEMOB2
-== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~Must I repeat myself, <CHARNAME>? No, no, that would be dreary indeed.~
+== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~还得我再说一遍吗，<CHARNAME>？不，不，那可太乏味了。~
 END
 
 I_C_T VICG1 5 ZDBAEMOB4
-== VICG1 IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~Look! Over there, I spot another one!~
-== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~Blast and bother.~
-== VICG2 IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~This is getting out of hand! Now there are two of them!~
-== VICG1 IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~Then the invasion is truly upon us.~
+== VICG1 IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~看！那边，我又发现一个！~
+== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~见鬼，真烦。~
+== VICG2 IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~这事越闹越大了！现在有两个了！~
+== VICG1 IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~那入侵算是真来了。~
 END
 
 I_C_T VICONI 11 ZDBAEMOB3
-== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~What a bother! ...But better her than me.~
+== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~真麻烦！……不过遭殃的是她，不是我。~
 END
 
 // Corneil, Cowled Wizard selling licences
 I_C_T CORNEIL 6 ZDBAECORN1
-== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~Listen to these Cowled Ones waving about their worthless warrants. Licenses for magic...how painfully pedestrian of them. I, Baeloth Barrityl, am beyond their banal barriers.~
+== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~听这些斗篷法师挥舞他们那一纸空文。施法的执照……多么平庸得叫人难受。我，贝洛斯·巴瑞提尔，早已越过他们那些乏味的藩篱。~
 END
 
 // Temple District (AR0900)
 // Response: Listen to me, my brothers and sisters... heed my words. We have been chosen as the recipient of a most holy miracle, one that should neither be dismissed nor ignored!
 INTERJECT CSGAAL 0 ZDBAEGAAL0
   == ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE", CD_STATE_NOTVALID)~ THEN
-  ~Oohoohoohoo! This should be good!~
+  ~喔嚯嚯嚯嚯！这下有看头了！~
 END CSGAAL 1
 // Response: I say that the churches lie to you! They claim their gods are present when they do nothing other than require your coin to fill their pockets!
 INTERJECT_COPY_TRANS CSGAAL 3 ZDBAEGAAL1
   == ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE", CD_STATE_NOTVALID)~ THEN
-  ~And I, I say listen to me Baeloth the Bright! Baeloth the Bedazzling!  Baeloth the ... Well in any event, don't listen to this blind bat, however brilliant his bids at bewilderment are.~
+  ~而我，我说该听我——光耀的贝洛斯！炫目的贝洛斯！贝洛斯……总之，别听这个瞎眼蝙蝠的，不管他那些让人犯迷糊的说辞多么花哨。~
 END
 // Response: Come, then! Those of you who wish to become the truly faithful, to witness the magnificence of the Unseeing Eye and the truth he brings... come with me!
 INTERJECT_COPY_TRANS CSGAAL 10 ZDBAEGAAL10
   == ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE", CD_STATE_NOTVALID)~ THEN
-  ~Follow him to mediocrity or follow me to magnificence. Your choice, of course.~
+  ~跟他走，走向平庸；跟我走，走向辉煌。当然，由你选。~
 END
 
 // Market District
 // Circus, Aerie introduction
 // Thanks for being vague when telling us you sense something is off, Baeloth
 I_C_T AERIE 30 ZDBAECIRC1
-== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~The Weave twists and twirls around her. Such chaotic patterns require a cunning conductor. But, surely, that is why you keep *me* close.~
+== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~魔网在她周身盘绕旋转。这么乱的纹样，得有个机敏的指挥才行。不过你把我 留 在身边，想必就是这个道理。~
 END
 
 // Docks District
@@ -114,35 +114,35 @@ END
 // ~<CHARNAME>! You do not need to...
 INTERJECT_COPY_TRANS JAHEIRAJ 247 ZDBAEJAHINTER0
   == ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE", CD_STATE_NOTVALID)~ THEN
-~Nay <CHARNAME>, NAY! You needst NOT do so. Mayhap thy bounteous booty might be better spent in more delightfully devious and devilish pursuits? Hmm? Perhaps upon this daring and dashing Drow, whose charm is as captivating as the celestial canvas itself?~
-  == JAHABOAM IF ~InParty("ZDBAE") !StateCheck("ZDBAE", CD_STATE_NOTVALID)~ THEN ~Errr, I don't think I have anything more for the gentleman.~
-  == ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE", CD_STATE_NOTVALID)~ THEN ~Bah! Am I to be belittled by balding bloated broker? What bilious buffoonery! Blast! BOO! A blight upon you sir!~
+~不可，<CHARNAME>，不可！你 万 万 不必如此。说不定你那满袋财宝，更该花在更愉快、更狡黠、更带邪趣的用途上？嗯？比如花在这位胆大又潇洒的卓尔身上——他的魅力就像天穹画卷本身一样摄人心魄？~
+  == JAHABOAM IF ~InParty("ZDBAE") !StateCheck("ZDBAE", CD_STATE_NOTVALID)~ THEN ~呃，我看我这儿没有别的能给这位先生了。~
+  == ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE", CD_STATE_NOTVALID)~ THEN ~呸！我竟要被一个秃顶肥硕的中间商小看？何其恶心的荒唐！见鬼！嘘你！先生，愿你遭瘟！~
 END
 
 // Spellhold
 // Yoshimo's Betrayal
 I_C_T YOSHJ 113 ZDBAEYOSB
-== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE", CD_STATE_NOTVALID)~ THEN ~A banal betrayal by any drow standard. Tiresome and tedious to be sure.~
+== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE", CD_STATE_NOTVALID)~ THEN ~按任何卓尔的标准看，都是平庸无奇的背叛。确实又累人又乏味。~
 END
 
 // Lonk is dealt with so we're gathering the team & charging Irenicus
 I_C_T PLAYER1 15 ZDBAELONK
-== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE", CD_STATE_NOTVALID)~ ~A fine flock of fodder you've freed. Shall we hurl them headlong into havoc then?~
+== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE", CD_STATE_NOTVALID)~ ~你放出来的这批炮灰可真不错。那我们就把他们一股脑扔进乱战里？~
 END
 
 // Slayer Change
 I_C_T PLAYER1 3 ZDBAESLAY1
-== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~Bravo! Such a savage spectacle! I call for an encore!~
+== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~好哇！何等野蛮的奇观！我要求加演一场！~
 END
 
 // Underdark
 // Upon entry, speaking with Carlig, only if Viconia isn't present because we're stealing her drow-language line & reusing it for our own purposes
 I_C_T UDDUER01 0 ZDBAECARLIG
 == ZDBAEJ IF ~!InParty("VICONIA")  InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~Lil waela lueth waela ragar brorna lueth wund nind, kyorlin elghinn! Sarn! Usstan uil Baeloth!~
-== UDDUER01 IF ~!InParty("VICONIA")  InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~Of... of course, malla Baeloth. I am at your service in all matters.~
-== UDDUER02 IF ~NumInPartyGT(2) !InParty("VICONIA")  InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~Wait, wait! Carlig, he bears no house insignia that I know. Look at his companions! He is an outcast!~
-== UDDUER02 IF ~!NumInPartyGT(2) !InParty("VICONIA")  InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~Wait, wait! Carlig, he bears no house insignia that I know. Look at his companion! He is an outcast!~
-== UDDUER01 IF ~!InParty("VICONIA")  InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~It is not often that those not directly associated with a House pass this way.~
+== UDDUER01 IF ~!InParty("VICONIA")  InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~当……当然，贝洛斯大人。我愿为您效劳，任何事都行。~
+== UDDUER02 IF ~NumInPartyGT(2) !InParty("VICONIA")  InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~等等，等等！卡尔利格，他身上没有我知道的任何家族徽记。看看他的同伴！他是个被放逐者！~
+== UDDUER02 IF ~!NumInPartyGT(2) !InParty("VICONIA")  InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~等等，等等！卡尔利格，他身上没有我知道的任何家族徽记。看看他的同伴！他是个被放逐者！~
+== UDDUER01 IF ~!InParty("VICONIA")  InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~不直接隶属某个家族的人，可不常从这里过。~
 END
 
 // Svirfneblin City Leader
@@ -153,8 +153,8 @@ EXTERN UDSVIR03 ZDBAEDUER1
 END
 
 CHAIN UDSVIR03 ZDBAEDUER1
-~Surprising that you travel with the darkness of a drow. I mean no disrespect, but it is surprising.~
-== ZDBAEJ ~You svirfneblin continue to state the spectacularly self-evident! Are you dazzled and delighted by my presence? Or threatened instead?~
+~你竟带着一个卓尔的黑暗同行，真叫人惊讶。我无意冒犯，可确实令人惊讶。~
+== ZDBAEJ ~你们这些斯维尔夫内布林总爱说些显而易见得过分的废话！我的到来是让你眼花缭乱、满心欢喜？还是让你受了威胁？~
 END
 IF ~~ DO ~EraseJournalEntry(57761)~ EXTERN UDSVIR03 3
 
@@ -164,23 +164,23 @@ EXTERN UDSVIR03 ZDBAEDUER2
 END
 
 CHAIN UDSVIR03 ZDBAEDUER2
-~No offense, malla drow, but I see you do not wear the symbols of any House that I know. You would fare no better in there, especially with your current companions.~
-== ZDBAEJ ~You underestimate my cunning, gnome, and my contacts. But tell us of your safe alternative.~
+~恕我直言，卓尔大人，我看你身上没戴任何我认得的家族标记。进去对你也未必更好，尤其是带着你现在这些同伴。~
+== ZDBAEJ ~侏儒，你低估了我的机敏，也低估了我的人脉。不过说说你那条稳妥的路子吧。~
 END
 IF ~~ EXTERN UDSVIR03 18
 
 I_C_T UDSVIR03 23 ZDBAEDEUR3
-== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~We are dealing with the infamous intermediary then? How tedious.~
+== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~那我们要打交道的，就是那位臭名昭著的中间人了？真乏味。~
 END
 
 // Svirfneblin Innkeeper
 I_C_T UDSVIR04 5 ZDBAEGNOMEINN
-== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~Astutely observed. This pitiful place is beneath me...though, admittedly, most places are.~
+== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~说得真敏锐。这可怜地方配不上我……不过话说回来，多数地方都配不上。~
 END
 
 // Svirfneblin Slaughter
 I_C_T UDSVIR08 1 ZDBAEDEEPGNOMES
-== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~Smashing svirfneblin sounds sublime! To the slaughter!~
+== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~把斯维尔夫内布林砸个稀烂，听着就妙！去杀！~
 END
 
 // Elven City
@@ -191,85 +191,85 @@ EXTERN PLAYER1 ZDBAETREE1
 END
 
 CHAIN PLAYER1 ZDBAETREE1
-~Baeloth Barrityl, the drow sorcerer, an unlikely ally who has flung fire and unleashed his fury upon your foes. But is he truly prepared for the fight ahead?~
+~贝洛斯·巴瑞提尔，这位卓尔术士，一个意想不到的盟友，曾向你的敌人掷出火焰、倾泻怒火。可他真准备好迎接眼前的战斗了吗？~
 DO ~SetGlobal("ZDBAETreeOfLife","GLOBAL",1)~
 END
-++ ~Baeloth, we have become friends, so you don't have to follow me any further. This isn't your fight.~ EXTERN ZDBAEJ ZDBAETREE2
-++ ~There's a chance we won't survive. Turn tail and flee if you're too cowardly to see this battle through.~ EXTERN ZDBAEJ  ZDBAETREE2
-++ ~We're nearing the end. I have to know that you're ready. There's no turning back.~ EXTERN ZDBAEJ ZDBAETREE2
+++ ~贝洛斯，我们已是朋友，所以你不必再跟着我了。这不是你的战斗。~ EXTERN ZDBAEJ ZDBAETREE2
+++ ~我们可能活不下来。你要是胆小到不敢打完这一仗，就掉头逃吧。~ EXTERN ZDBAEJ  ZDBAETREE2
+++ ~快到终局了。我得知道你准备好了。没有回头路。~ EXTERN ZDBAEJ ZDBAETREE2
 
 
 CHAIN ZDBAEJ ZDBAETREE2
-~I was preparing a particularly scorching fireball for these simpering elves. How they ever forced my kin beneath the ground is beyond comprehension.~
-== ZDBAEJ ~But yes, yes, I hear you. I have resolved to remain. The spotlight beckons and I shan't miss my cue!~
+~我正给这些装腔作势的精灵准备一颗格外灼人的火球。他们到底怎么把我的族人逼到地下去的，实在难以理解。~
+== ZDBAEJ ~不过，是，是，我听见了。我已决意留下。聚光灯在呼唤，我绝不会错过自己的上场时机！~
 END
 COPY_TRANS PLAYER1 33
 
 // Tree of Life, Irenicus is dead
 I_C_T PLAYER1 16 ZDBAEIREN1
-  == ZDBAEJ IF ~InParty("ZDBAE") Range("ZDBAE",15) !StateCheck("ZDBAE",CD_STATE_NOTVALID)~ THEN ~Obviously, this was going to happen. Our triumph was assured with my superior sorcerous skills. ...Ah! What is this strange, nay sinister, sensation?~
+  == ZDBAEJ IF ~InParty("ZDBAE") Range("ZDBAE",15) !StateCheck("ZDBAE",CD_STATE_NOTVALID)~ THEN ~显然，这是迟早的事。有我这般高超的术法，我们的胜利早已注定。……啊！这是什么怪异、不，邪恶的感觉？~
 END
 
 // Entering the Hells
 I_C_T PLAYER1 25 ZDBAEHELL1
-== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~The Hells, is it? What a delightful debut for the next deadly duel!~
+== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~地狱，是吗？对下一场致命的决斗来说，这可真是个愉快的开场！~
 END
 
 // Battling Irenicus in the Hells
 I_C_T HELLJON 7 ZDBAEHELL2
-== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~Fight or flee, either way you fall!~
+== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~战或逃，你终将倒下！~
 END
 
 I_C_T HELLJON 8 ZDBAEHELL2
-== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~Fight or flee, either way you fall!~
+== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~战或逃，你终将倒下！~
 END
 
 I_C_T HELLJON 9 ZDBAEHELL2
-== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~Fight or flee, either way you fall!~
+== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~战或逃，你终将倒下！~
 END
 
 I_C_T HELLJON 10 ZDBAEHELL2
-== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~Fight or flee, either way you fall!~
+== ZDBAEJ IF ~InParty("ZDBAE") !StateCheck("ZDBAE",CD_STATE_NOTVALID) InMyArea("ZDBAE")~ THEN ~战或逃，你终将倒下！~
 END
 
 /* friendship arc */
 
 // 1 - General check-in & check up (shortly after recruitment, pre-Spellhold)
 CHAIN IF ~Global("ZDBaeFriendshipTalks","GLOBAL",2)~ THEN ZDBAEJ BAEFT1
-  ~The Copper Coronet, ah, such squandered potential. An arena of note but without a noteworthy patron. The roar of the ravenous crowd, the screams of the soon-to-be-slain, my reign would have been renowned!~
+  ~铜冠旅店啊，多么被浪费的潜力。一座有名号的竞技场，却没有一位够格的主顾。饥饿人群的咆哮、即将被杀者的惨叫——我的统治本该名扬天下！~
   DO ~SetGlobal("ZDBaeFriendshipTalks","GLOBAL",3) RealSetGlobalTimer("ZDBaeFriendshipTalksTimer","GLOBAL",3600)~
-  == ZDBAEJ ~Alas, my triumphant return to running fighting pits came to an abrupt close. But fortune favors the flexible. Plans may perish, yet possibilities persist! Tell me, <CHARNAME>, what mission moves our party onward?~
+  == ZDBAEJ ~可惜，我重返主持斗技场的凯旋之路戛然而止。不过时运偏爱灵活之人。计划会夭折，可能性却长存！告诉我，<CHARNAME>，是什么任务推动我们这队人前行？~
 END
-  + ~NumInPartyGT(2)~ + ~Imoen was kidnapped by the Cowled Wizards, we're trying to get her back.~ EXTERN ZDBAEJ BAEFT1.1
-  + ~!NumInPartyGT(2)~ + ~Imoen was kidnapped by the Cowled Wizards, I'm trying to get her back.~ EXTERN ZDBAEJ BAEFT1.1
+  + ~NumInPartyGT(2)~ + ~爱蒙被斗篷法师掳走了，我们正设法把她救回来。~ EXTERN ZDBAEJ BAEFT1.1
+  + ~!NumInPartyGT(2)~ + ~爱蒙被斗篷法师掳走了，我正设法把她救回来。~ EXTERN ZDBAEJ BAEFT1.1
   // Should be OR(2) & also check for SOD completion
-  + ~Global("BPINBG","GLOBAL",1)~ + ~I was captured and tortured by a mage called Irenicus. I intend to find him and make him pay for his insolence.~ EXTERN ZDBAEJ BAEFT1.2
-  + ~!Global("BPINBG","GLOBAL",1)~ + ~I was captured and tortured by a mage named Irenicus. I intend to find him and make him pay for his insolence.~ EXTERN ZDBAEJ BAEFT1.3
-  ++ ~Just fall in line, Baeloth, I've no intention of explaining my plans.~ EXTERN ZDBAEJ BAEFT1.4
+  + ~Global("BPINBG","GLOBAL",1)~ + ~我被一个叫艾瑞尼卡斯的法师抓去折磨过。我要找到他，让他为这份狂妄付出代价。~ EXTERN ZDBAEJ BAEFT1.2
+  + ~!Global("BPINBG","GLOBAL",1)~ + ~我被一个名叫艾瑞尼卡斯的法师抓去折磨过。我要找到他，让他为这份狂妄付出代价。~ EXTERN ZDBAEJ BAEFT1.3
+  ++ ~乖乖跟上就是了，贝洛斯，我没打算解释我的计划。~ EXTERN ZDBAEJ BAEFT1.4
 
 CHAIN ZDBAEJ BAEFT1.1
-~Those conniving Cowled Ones? I applaud your audacity in opposing them. Any cause that confounds them is one I shall champion. Imagine trying to impose limits on my magic!~
-== ZDBAEJ ~Oh, right, Imoen. Yes, yes, we’ll save her too, I suppose.~ EXTERN ZDBAEJ BFAEFT1.5
+~那些算计人的斗篷法师？你敢跟他们作对，我为你鼓掌。任何能叫他们难堪的由头，我都乐意拥护。想想看，居然想给我的魔法设限！~
+== ZDBAEJ ~哦对，爱蒙。是，是，我们大概也把她一并救出来。~ EXTERN ZDBAEJ BFAEFT1.5
 
 CHAIN ZDBAEJ BAEFT1.2
-~Captured yet again? A dreadful habit and one you should cease. But this Irenicus intrigues me. He's powerful and presumptuous enough to seize you? You'll need formidable forces, and of course my magnificent magic, if you wish to see him suffer.~ EXTERN ZDBAEJ BFAEFT1.5
+~又被抓了一次？这习惯可太糟，你该改改。不过这位艾瑞尼卡斯倒叫我起了兴趣。他既有力量，又狂妄到敢掳走你？你若想看他受苦，就需要强有力的帮手，当然，还有我辉煌的魔法。~ EXTERN ZDBAEJ BFAEFT1.5
 
 CHAIN ZDBAEJ BAEFT1.3
-~To stoke your vengeance, Irenicus must be a mage of means and malice indeed. Fear not, with me in your retinue, retribution is only a matter of time.~ EXTERN ZDBAEJ BFAEFT1.5
+~能燃起你这般复仇之心的，艾瑞尼卡斯想必是个既有权势又满怀恶意的法师。别担心，有我随行，报偿只是时间问题。~ EXTERN ZDBAEJ BFAEFT1.5
 
 CHAIN ZDBAEJ BAEFT1.4
-~Then consider this conversation adjourned.~
+~那就当这场谈话休庭吧。~
 END
 
 CHAIN ZDBAEJ BFAEFT1.5
-~I chose wisely when I cast my lot in with you. Do not fret, I shall think of something suitable with which you can repay me. The pleasure of my company does have its price.~
+~我把命运押在你身上，选得真是明智。别发愁，我会想个合适的法子让你报答我。有我相伴的乐趣，可是有价钱的。~
 END
-  + ~!NumInPartyGT(2)~ + ~Baeloth, you walk freely only due to my protection.~ EXTERN ZDBAEJ BAEFT1.6
-  + ~NumInPartyGT(2)~ + ~Baeloth, you walk freely only due to our protection.~ EXTERN ZDBAEJ BAEFT1.6
-  ++ ~From you, I would expect nothing less.~ EXTERN ZDBAEJ BAEFT1.6
-  ++ ~Keep making demands and I’ll stuff you into the Copper Coronet’s cages instead.~ EXTERN ZDBAEJ BAEFT1.6
-  ++ ~I assume your silence is a luxury I cannot afford then?~ EXTERN ZDBAEJ BAEFT1.6
+  + ~!NumInPartyGT(2)~ + ~贝洛斯，你能自由行走，全因我的庇护。~ EXTERN ZDBAEJ BAEFT1.6
+  + ~NumInPartyGT(2)~ + ~贝洛斯，你能自由行走，全因我们的庇护。~ EXTERN ZDBAEJ BAEFT1.6
+  ++ ~从你嘴里，我还能指望别的什么。~ EXTERN ZDBAEJ BAEFT1.6
+  ++ ~你再提要求，我就把你塞进铜冠旅店的笼子里去。~ EXTERN ZDBAEJ BAEFT1.6
+  ++ ~那我猜，你的沉默是我负担不起的奢侈品了？~ EXTERN ZDBAEJ BAEFT1.6
 
 CHAIN ZDBAEJ BAEFT1.6
-~Now, onward! I tire of talking and thirst for other theatrics!~
+~好了，出发！我懒得再说话，只想找点别的戏码过过瘾！~
 END
